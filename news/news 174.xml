@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<doc>
+  <source><![CDATA[https://news.yandex.ru/yandsearch?lr=213&cl4url=https%3A%2F%2Fmobidevices.ru%2Farm-ban-huawei&from=search]]></source>
+  <origin verify="true" type="str" auto="true"><![CDATA[MobiDevices]]></origin>
+  <category verify="true" type="str" auto="true"><![CDATA[Гаджеты]]></category>
+  <title verify="true" type="str" auto="true"><![CDATA[Смартфоны Huawei могут лишиться ARM-процессоров]]></title>
+  <text type="str"><![CDATA[В связи с указом президента США Дональдом Трампом, ARM остановила «все активные контракты, права на поддержку и любые другие соглашения» с Huawei и её дочерними компаниями. Разработки компании ARM составляют основу большинства процессоров мобильных устройств во всем мире.]]></text>
+</doc>
