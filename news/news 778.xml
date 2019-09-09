@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<doc>
+  <source><![CDATA[https://news.yandex.ru/yandsearch?lr=213&cl4url=www.cnews.ru%2Fnews%2Ftop%2F2019-05-22_bankovskij_shifrovalshchik_trebuet_vykupno_gotov&from=search]]></source>
+  <origin verify="true" type="str" auto="true"><![CDATA[CNews]]></origin>
+  <category verify="true" type="str" auto="true"><![CDATA[Технологии]]></category>
+  <title verify="true" type="str" auto="true"><![CDATA[Банковский шифровальщик требует выкуп, но готов обучить жертву азам безопасности]]></title>
+  <text type="str"><![CDATA[Хитрый банковский троянец Emotet заряжает корпоративные сети шифровальщиком Batch-файл, выявленный Sophos, нейтрализует 44 различных процессов и 199 служб Windows, которые могут помешать запуску шифровальщика.]]></text>
+</doc>
