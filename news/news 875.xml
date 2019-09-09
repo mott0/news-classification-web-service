@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<doc>
+  <source><![CDATA[https://news.yandex.ru/yandsearch?lr=213&cl4url=https%3A%2F%2Fxakep.ru%2F2019%2F05%2F23%2F0day-pocs%2F&from=search]]></source>
+  <origin verify="true" type="str" auto="true"><![CDATA[Хакер Online]]></origin>
+  <category verify="true" type="str" auto="true"><![CDATA[Гаджеты]]></category>
+  <title verify="true" type="str" auto="true"><![CDATA[Опубликованы эксплоиты для свежих 0-day уязвимостей в Windows]]></title>
+  <text type="str"><![CDATA[ИБ-специалистка, известная под псевдонимом SandboxEscaper, обнародовала новую порцию PoC-эксплоитов для еще неисправленных уязвимостей в Windows. Нужно отметить, что это далеко не первый раз, когда исследовательница публикует эксплоиты для свежих проблем в Windows, не дожидаясь выхода исправлений.]]></text>
+</doc>
