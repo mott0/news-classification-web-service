@@ -1,4 +1,4 @@
-package com.github.mott0.newsclassificationwebservice;
+package com.github.mott0.NewsClassificationWebService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
