@@ -1,4 +1,4 @@
-package com.github.mott0.newsclassificationwebservice;
+package com.github.mott0.NewsClassificationWebService;
 
 import java.util.Arrays;
 import java.util.Collections;
