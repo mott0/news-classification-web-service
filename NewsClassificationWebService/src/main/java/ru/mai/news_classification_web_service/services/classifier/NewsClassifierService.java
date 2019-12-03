@@ -1,25 +1,25 @@
-package ru.mai.news_classification_web_service.classifier;
+package ru.mai.news_classification_web_service.services.classifier;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.springframework.stereotype.Service;
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
 
-public class NewsClassifier {
+@Service
+public class NewsClassifierService {
     private Classifier classifier;
     private ArrayList<String> dictionary;
-    private ArrayList<String> wordsToRemove;
 
-    public NewsClassifier() throws Exception {
+    public NewsClassifierService() throws Exception {
         classifier = (Classifier) SerializationHelper.read(new FileInputStream("data/Yandex_News_Classification.model"));
         loadDictionary();
-        loadWordsToRemove();
     }
 
     public NewsCategory classifyText(String text) throws Exception {
@@ -32,11 +32,6 @@ public class NewsClassifier {
     private void loadDictionary() throws Exception  {
         dictionary = new ArrayList<>();
         addFileDataToDict(dictionary, new BufferedReader(new InputStreamReader(new FileInputStream("data/Yandex_News_Dictionary.txt"), StandardCharsets.UTF_8)));
-    }
-
-    private void loadWordsToRemove() throws Exception {
-        wordsToRemove = new ArrayList<>();
-        addFileDataToDict(wordsToRemove, new BufferedReader(new InputStreamReader(new FileInputStream("data/Words_To_Remove.txt"), StandardCharsets.UTF_8)));
     }
 
     private void addFileDataToDict(ArrayList<String> dictionary, BufferedReader dictReader) throws Exception {
@@ -56,7 +51,7 @@ public class NewsClassifier {
         ArrayList<String> words = new ArrayList<>();
         for (String word : rawWords) {
             word = word.toLowerCase().replaceAll("[.,/#!?$%^&*;:{}=_`~()]", "");
-            if (!word.isEmpty() && !wordsToRemove.contains(word)) {
+            if (!word.isEmpty()) {
                 words.add(word);
             }
         }
