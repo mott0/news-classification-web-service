@@ -1,4 +1,4 @@
-package ru.mai.news_classification_web_service.services.classifier;
+package ru.mai.news_classification_web_service.classifier.entities;
 
 public enum NewsCategory {
     CULTURE("culture"),

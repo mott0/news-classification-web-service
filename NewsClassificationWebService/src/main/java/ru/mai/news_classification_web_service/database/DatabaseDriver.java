@@ -1,7 +1,7 @@
 package ru.mai.news_classification_web_service.database;
 
 import ru.mai.news_classification_web_service.database.entities.NewsArticle;
-import ru.mai.news_classification_web_service.services.classifier.NewsCategory;
+import ru.mai.news_classification_web_service.classifier.entities.NewsCategory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,7 +10,9 @@ public class DatabaseDriver {
     public ArrayList<NewsArticle> getNewsArticles() {
         ArrayList<NewsArticle> newsArticles = new ArrayList<>();
 
-        String sqlQuery = "SELECT YAN.Id, YAN.Title, YAN.Text, YAN.Source, NC.Name FROM Yandex_News_Articles AS YAN INNER JOIN NewsCategory AS NC ON YAN.NewsCategoryId = NC.Id";
+        String sqlQuery = "SELECT YAN.Id, YAN.Title, YAN.Text, YAN.Source, NC.Name " +
+                "FROM Yandex_News_Articles AS YAN " +
+                "INNER JOIN NewsCategory AS NC ON YAN.NewsCategoryId = NC.Id";
 
         try (Connection connection = connect();
              Statement statement  = connection.createStatement();
@@ -27,7 +29,6 @@ public class DatabaseDriver {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
         return newsArticles;
     }
 

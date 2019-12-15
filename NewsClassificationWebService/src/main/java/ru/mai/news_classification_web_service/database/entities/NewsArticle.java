@@ -1,6 +1,6 @@
 package ru.mai.news_classification_web_service.database.entities;
 
-import ru.mai.news_classification_web_service.services.classifier.NewsCategory;
+import ru.mai.news_classification_web_service.classifier.entities.NewsCategory;
 
 public class NewsArticle {
     private int id;

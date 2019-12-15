@@ -1,4 +1,4 @@
-package ru.mai.news_classification_web_service.services.classifier;
+package ru.mai.news_classification_web_service.classifier;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
+import ru.mai.news_classification_web_service.classifier.entities.NewsCategory;
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
 
-@Service
-public class NewsClassifierService {
+public class NewsClassifier {
     private Classifier classifier;
     private ArrayList<String> dictionary;
 
-    public NewsClassifierService() throws Exception {
+    public NewsClassifier() throws Exception {
         classifier = (Classifier) SerializationHelper.read(new FileInputStream("data/Yandex_News_Classification.model"));
         loadDictionary();
     }
