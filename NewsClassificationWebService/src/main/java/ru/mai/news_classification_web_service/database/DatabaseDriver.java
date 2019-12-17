@@ -2,12 +2,13 @@ package ru.mai.news_classification_web_service.database;
 
 import ru.mai.news_classification_web_service.database.entities.NewsArticle;
 import ru.mai.news_classification_web_service.classifier.entities.NewsCategory;
+import ru.mai.news_classification_web_service.errors.ArticlesException;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseDriver {
-    public ArrayList<NewsArticle> getNewsArticles() {
+    public ArrayList<NewsArticle> getNewsArticles() throws ArticlesException {
         ArrayList<NewsArticle> newsArticles = new ArrayList<>();
 
         String sqlQuery = "SELECT YAN.Id, YAN.Title, YAN.Text, YAN.Source, NC.Name " +
@@ -28,6 +29,7 @@ public class DatabaseDriver {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            throw new ArticlesException();
         }
         return newsArticles;
     }

@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 import org.springframework.stereotype.Service;
 import ru.mai.news_classification_web_service.classifier.entities.NewsCategory;
+import ru.mai.news_classification_web_service.errors.ClassificationException;
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
@@ -22,11 +23,15 @@ public class NewsClassifier {
         loadDictionary();
     }
 
-    public NewsCategory classifyText(String text) throws Exception {
+    public NewsCategory classifyText(String text) throws ClassificationException {
         double[] vector = createVector(createWordsArray(text));
         Instances dataModel = createDataModel(vector);
 
-        return NewsCategory.values()[(int)classifier.classifyInstance(dataModel.firstInstance())];
+        try {
+            return NewsCategory.values()[(int)classifier.classifyInstance(dataModel.firstInstance())];
+        } catch (Exception ex) {
+            throw new ClassificationException();
+        }
     }
     
     private void loadDictionary() throws Exception  {

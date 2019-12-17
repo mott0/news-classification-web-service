@@ -2,6 +2,7 @@ package ru.mai.news_classification_web_service.web.controllers;
 
 import org.springframework.web.bind.annotation.*;
 
+import ru.mai.news_classification_web_service.errors.ArticlesException;
 import ru.mai.news_classification_web_service.services.database.DatabaseService;
 import ru.mai.news_classification_web_service.web.responses.NewsArticlesResponse;
 
@@ -15,7 +16,7 @@ public class NewsArticlesWebServiceController {
     }
 
     @GetMapping(value = "/newsArticles")
-    public NewsArticlesResponse getNewsArticles() {
+    public NewsArticlesResponse getNewsArticles() throws ArticlesException {
         return new NewsArticlesResponse(databaseService.getNewsArticles());
     }
 }
